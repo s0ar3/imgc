@@ -34,7 +34,7 @@ main() {
         if [[ "${extension}" == "${desired_extension}" ]]; then
             printf "\n\e[1;31m%s\e[0m\n\n" "*Image is already in JPG format."
         else
-            convert "${filename[i]}" "${output_name}.jpg"
+            convert "${filename[i]}" "${output_name}${desired_extension}"
             printf "\e[1;32m%s\e[0m\n\n" "*${filename[i]} converted to ${output_name}${desired_extension}"
         fi
     done
