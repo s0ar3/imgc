@@ -15,12 +15,13 @@ checkingSw() {
 converting() {
    local desired_extension="$1"
 
-    if [[ ${#desired_extension} -ne 3 ]]; then
+    if [[ ! ${#desired_extension} -ne 3 ]]; then
         printf "\n\e[1;31m%s\e[0m\n\n" "ERROR - You need to mentioned a desired extension for output."
         exit 1
     fi
 
    printf "%60s\n" " " | tr ' ' '-'
+   
    for ((i=2;i<${#filename[@]};i++)); do
         extension="${filename[i]#*.}"
         output_name="${filename[i]%.*}"
